@@ -135,6 +135,25 @@ button:disabled {
   padding-top: 12px;
 }
 
+.participante-identificacao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  border-radius: 50%;
+  background: #eaf0f6;
+  color: var(--azul-escuro);
+  font-weight: 700;
+}
+
 .participante .acoes {
   justify-content: flex-end;
   flex-shrink: 0;

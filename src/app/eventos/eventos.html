@@ -39,8 +39,8 @@
         <button class="evento-item" type="button"
                 [class.selecionado]="eventoSelecionadoId === evento.id"
                 (click)="selecionarEvento(evento.id)">
-          <strong>{{ evento.nome }}</strong>
-          <span>{{ evento.data }} · {{ evento.local }}</span>
+          <strong>{{ evento.nome | titulo | resumo:40 }}</strong>
+          <span>{{ evento.data | date:'dd/MM/yyyy' }} · {{ evento.local | uppercase }}</span>
         </button>
       }
     </div>
@@ -52,9 +52,9 @@
     <div class="titulo-secao">
       <div>
         <h3>Participantes</h3>
-        <p>{{ evento.nome }} · {{ evento.data }} · {{ evento.local }}</p>
+        <p>{{ evento.data | date:"EEEE, d 'de' MMMM" }} · {{ evento.data | diasPara }} · {{ evento.local | uppercase }}</p>
       </div>
-      <span class="contador">{{ participantes.length }}</span>
+      <span class="contador">{{ participantes.length | number }}</span>
     </div>
 
     <form class="formulario" (ngSubmit)="salvarParticipante()" #formParticipante="ngForm">
@@ -96,10 +96,13 @@
     <div class="lista-participantes">
       @for (participante of participantes; track participante.id) {
         <article class="participante">
-          <div>
-            <h4>{{ participante.descricao }}</h4>
-            <p>{{ participante.email }} · {{ participante.telefone }}</p>
-            <small>Pagamento: {{ participante.formaPagamento }}</small>
+          <div class="participante-identificacao">
+            <span class="avatar">{{ participante.descricao | iniciais }}</span>
+            <div>
+              <h4>{{ participante.descricao }}</h4>
+              <p>{{ participante.email | mascaraEmail }} · {{ participante.telefone | telefone }}</p>
+              <small>Pagamento: {{ participante.formaPagamento | formaPagamento }}</small>
+            </div>
           </div>
           <div class="acoes">
             <button class="secundario" type="button" (click)="editarParticipante(participante)">

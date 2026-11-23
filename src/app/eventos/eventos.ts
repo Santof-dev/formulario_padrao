@@ -1,11 +1,31 @@
 import { Component } from '@angular/core';
+import { DatePipe, DecimalPipe, UpperCasePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Evento, FormaDePagamento, NovoEvento, NovoParticipante, Participante } from './eventos.model';
 import { EventosService } from './eventos.service';
+import { TelefonePipe } from '../pipes/telefone-pipe';
+import { FormaPagamentoPipe } from '../pipes/forma-pagamento-pipe';
+import { IniciaisPipe } from '../pipes/iniciais-pipe';
+import { DiasParaPipe } from '../pipes/dias-para-pipe';
+import { TituloPipe } from '../pipes/titulo-pipe';
+import { ResumoPipe } from '../pipes/resumo-pipe';
+import { MascaraEmailPipe } from '../pipes/mascara-email-pipe';
 
 @Component({
   selector: 'app-eventos',
-  imports: [FormsModule],
+  imports: [
+    FormsModule,
+    DatePipe,
+    DecimalPipe,
+    UpperCasePipe,
+    TelefonePipe,
+    FormaPagamentoPipe,
+    IniciaisPipe,
+    DiasParaPipe,
+    TituloPipe,
+    ResumoPipe,
+    MascaraEmailPipe
+  ],
   templateUrl: './eventos.html',
   styleUrl: './eventos.css'
 })
