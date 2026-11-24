@@ -3,11 +3,13 @@ export interface Evento {
   nome: string;
   data: string;
   local: string;
+  vagas: number;
 }
 
 export type NovoEvento = Omit<Evento, 'id'>;
 
-export type FormaDePagamento = 'pix' | 'cartao' | 'dinheiro' | 'transferencia' | 'outro';
+export type FormaPagamento = 'pix' | 'cartao' | 'boleto' | 'dinheiro' | '';
+export type FormaDePagamento = FormaPagamento;
 
 export interface Participante {
   id: number;

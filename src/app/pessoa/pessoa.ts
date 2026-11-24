@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrl: './pessoa.css'
 })
 export class Pessoa {
-  nome = 'Ana Souza';
+  nome = 'Maria Eduarda';
   curso = 'Engenharia de Computação';
-  email = 'ana@exemplo.com';
+  email = 'maria@exemplo.com';
 }

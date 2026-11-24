@@ -1,6 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import type { FormaPagamento } from '../eventos/eventos.model';
 
-export type FormaPagamento = 'pix' | 'cartao' | 'boleto' | 'dinheiro' | '';
+export type { FormaPagamento } from '../eventos/eventos.model';
 
 const ROTULOS: Record<FormaPagamento, string> = {
   pix: 'Pix',

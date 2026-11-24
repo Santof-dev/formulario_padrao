@@ -25,6 +25,11 @@
       <input id="localEvento" name="localEvento" type="text" required
              [(ngModel)]="rascunhoEvento.local">
     </div>
+    <div class="campo">
+      <label for="vagasEvento">Vagas</label>
+      <input id="vagasEvento" name="vagasEvento" type="number" min="0" required
+             [(ngModel)]="rascunhoEvento.vagas">
+    </div>
     <button type="submit" [disabled]="formEvento.invalid">Cadastrar evento</button>
   </form>
 </section>
@@ -40,7 +45,7 @@
                 [class.selecionado]="eventoSelecionadoId === evento.id"
                 (click)="selecionarEvento(evento.id)">
           <strong>{{ evento.nome | titulo | resumo:40 }}</strong>
-          <span>{{ evento.data | date:'dd/MM/yyyy' }} · {{ evento.local | uppercase }}</span>
+          <span>{{ evento.data | date:'dd/MM/yyyy' }} · {{ evento.local | uppercase }} · {{ evento.vagas | number }}</span>
         </button>
       }
     </div>

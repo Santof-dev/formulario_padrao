@@ -32,10 +32,10 @@ import { MascaraEmailPipe } from '../pipes/mascara-email-pipe';
 export class Eventos {
   readonly formasDePagamento: Array<{ valor: FormaDePagamento; rotulo: string }> = [
     { valor: 'pix', rotulo: 'Pix' },
-    { valor: 'cartao', rotulo: 'Cartão' },
+    { valor: 'cartao', rotulo: 'Cartão de crédito' },
+    { valor: 'boleto', rotulo: 'Boleto' },
     { valor: 'dinheiro', rotulo: 'Dinheiro' },
-    { valor: 'transferencia', rotulo: 'Transferência' },
-    { valor: 'outro', rotulo: 'Outro' }
+    { valor: '', rotulo: 'Não informado' }
   ];
 
   eventos: Evento[];
@@ -126,7 +126,7 @@ export class Eventos {
   }
 
   private eventoEmBranco(): NovoEvento {
-    return { nome: '', data: '', local: '' };
+    return { nome: '', data: '', local: '', vagas: 0 };
   }
 
   private participanteEmBranco(): NovoParticipante {
