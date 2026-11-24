@@ -1,46 +1,52 @@
-/* cabecalho: faixa azul de ponta a ponta, conteudo centralizado dentro */
+/* cabecalho: faixa escura moderna de ponta a ponta, conteudo centralizado dentro */
 
 .topo {
-  background: linear-gradient(135deg, var(--azul-escuro), var(--azul-claro));
-  border-bottom: 3px solid var(--ouro);
-  padding: 22px 0 0;
+  background: linear-gradient(135deg, var(--azul-escuro), #1e293b);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px 0 0;
   margin-bottom: 32px;
 }
 
 .faixa {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .topo h1 {
   margin: 0;
-  font-size: 21px;
-  letter-spacing: -0.01em;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   color: #fff;
 }
 
 .menu {
   display: flex;
-  gap: 4px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .menu a {
   text-decoration: none;
-  color: #c9dcf3;
+  color: #cbd5e1;
   font-size: 14px;
+  font-weight: 500;
   padding: 8px 14px;
-  border-bottom: 3px solid transparent;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
 }
 
 .menu a:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .menu a.ativo {
   color: #fff;
   font-weight: 600;
+  background: rgba(129, 140, 248, 0.14);
   border-bottom-color: var(--ouro);
 }
 

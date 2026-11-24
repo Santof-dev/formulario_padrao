@@ -1,0 +1,40 @@
+<section>
+  @if (dados; as p) {
+    <h2>Olá, {{ p.firstName }} {{ p.lastName }}</h2>
+    <p>E-mail: {{ p.email }}</p>
+    <button type="button" (click)="sair()">Sair</button>
+  } @else if (erroPerfil) {
+    <p>{{ erroPerfil }}</p>
+  } @else {
+    <p>Carregando perfil...</p>
+  }
+
+  <hr />
+
+  <h3>Buscar CEP</h3>
+  <form (ngSubmit)="buscarCep()">
+    <label for="cep">CEP</label>
+    <input
+      id="cep"
+      name="cep"
+      type="text"
+      [(ngModel)]="cep"
+      placeholder="40140-110"
+    />
+    <button type="submit" [disabled]="buscandoCep">
+      {{ buscandoCep ? 'Buscando...' : 'Buscar' }}
+    </button>
+  </form>
+
+  @if (cepNaoEncontrado) {
+    <p>CEP não encontrado.</p>
+  }
+
+  @if (endereco; as end) {
+    <div>
+      <p><strong>Rua:</strong> {{ end.rua }}</p>
+      <p><strong>Bairro:</strong> {{ end.bairro }}</p>
+      <p><strong>Cidade:</strong> {{ end.cidade }} - {{ end.uf }}</p>
+    </div>
+  }
+</section>
